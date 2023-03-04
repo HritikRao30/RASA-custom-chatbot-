@@ -1,0 +1,61 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - add_data
+
+entities: 
+  - email
+  - number
+
+slots:
+  name:
+    type: unfeaturized
+  number:
+    type: unfeaturized
+  occupation:
+    type: unfeaturized
+  email:
+    type: unfeaturized
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_goodbye:
+    - text: "Bye"
+  
+  utter_happy:
+    - text: "Thats great"
+
+  utter_ask_name:
+    - text: "may i know your name please"
+
+  utter_ask_number:
+    - text: "may i know your number please"
+
+  utter_ask_email:
+    - text: "may i know your email please"
+
+  utter_ask_occupation:
+    - text: "may i know your occupation please"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_name
+  - utter_ask_number
+  - utter_ask_email
+  - utter_ask_occupation
+  - action_save_data
+
+forms:
+   - Form_Info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+## collecting the name email phone number and occupation from user

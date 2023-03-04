@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: add data to excel accept
+    steps:
+      - intent: add_data
+      - action: 
+        - Form_Info
+        - Form{"name":"Form_Info"}
+        - Form{"name":null}
+      - intent: affirm
+      - action: action_save_data
+
+  - story: add data to excel deny
+    steps:
+      - intent: add_data
+      - action: 
+        - Form_Info
+        - Form{"name":"Form_Info"}
+        - Form{"name":null}
+      - intent: deny
+      - action: utter_goodbye
+
